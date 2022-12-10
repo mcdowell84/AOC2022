@@ -22,16 +22,15 @@ def countmonkey(char):
 chunked_list = list()
 chunk_size = 3
 
-with open("input/03test.txt") as file:
+with open("input/03.txt") as file:
     sample = file.readlines()
 
     for i in range(0, len(sample), chunk_size):
         chunked_list.append (sample[i:i+chunk_size])
 
 for count, value in enumerate(chunked_list):
-    set = splitmonkey(value)
-
-    char = checkmonkey(set[0], set[1], set[2])
+    setty = splitmonkey(value)
+    char = checkmonkey(setty[0], setty[1], setty[2])
     number = countmonkey(char)
     sum += number
 
